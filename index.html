@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student MCQ Portal — Learn • Practice • Improve</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📚 FREE STUDENT LEARNING SPACE</div>
+    <h1>Student MCQ Portal</h1>
+    <p class="tagline">Learn • Practice • Improve</p>
+    <p class="credit">Developed by Code Brothers</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ============ HOME VIEW ============ -->
+  <section id="view-home" class="view">
+    <div class="card student-card">
+      <label class="field">
+        <span>👤 Student Name <em>(Optional)</em></span>
+        <input type="text" id="studentName" maxlength="60" placeholder="e.g. Ahmed Ali" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>🏫 School Name <em>(Optional)</em></span>
+        <input type="text" id="schoolName" maxlength="80" placeholder="e.g. Govt. High School" autocomplete="off">
+      </label>
+    </div>
+
+    <h2 class="section-title">Choose your class to start the test</h2>
+    <div id="classGrid" class="class-grid"></div>
+  </section>
+
+  <!-- ============ SUBJECTS VIEW ============ -->
+  <section id="view-subjects" class="view hidden">
+    <button class="btn btn-ghost" id="backHomeBtn">← Back to Classes</button>
+    <h2 class="section-title" id="subjectsTitle">Class 3</h2>
+    <p class="section-sub">Pick a subject — every test is 9 questions • 9 marks • 5 minutes</p>
+    <div id="subjectGrid" class="subject-grid"></div>
+  </section>
+
+  <!-- ============ TEST VIEW ============ -->
+  <section id="view-test" class="view hidden">
+    <div class="test-top">
+      <div class="test-meta">
+        <span id="testLabel">Class 3 • English</span>
+        <span id="progressText">Question 1 of 9</span>
+      </div>
+      <div class="test-actions">
+        <span id="timer" class="timer">⏱ 5:00</span>
+        <button class="btn btn-quit" id="quitBtn">✕ Quit</button>
+      </div>
+    </div>
+    <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+
+    <div class="card question-card">
+      <h3 id="questionText" class="question-text"></h3>
+      <p id="questionUrdu" class="question-urdu" dir="rtl" lang="ur"></p>
+      <div id="optionsBox" class="options"></div>
+    </div>
+
+    <div class="test-nav">
+      <button class="btn btn-secondary" id="prevBtn">← Previous</button>
+      <button class="btn btn-primary" id="nextBtn">Next →</button>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS VIEW ============ -->
+  <section id="view-results" class="view hidden">
+    <div class="card result-card" id="resultCard">
+      <h2 id="resultHeading">🎉 Excellent! You Passed the Test!</h2>
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120" width="150" height="150" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="ring-bg"></circle>
+          <circle cx="60" cy="60" r="52" class="ring-fg" id="ringFg"></circle>
+        </svg>
+        <div class="score-center"><span id="scorePct">100%</span></div>
+      </div>
+      <p class="score-line">Score: <strong id="scoreText">9/9</strong></p>
+      <p class="student-line" id="studentLine"></p>
+      <p class="result-message" id="resultMessage"></p>
+
+      <div class="summary-grid">
+        <div class="summary-box ok"><span class="num" id="sumCorrect">0</span><span class="lbl">Correct Answers</span></div>
+        <div class="summary-box bad"><span class="num" id="sumWrong">0</span><span class="lbl">Wrong Answers</span></div>
+        <div class="summary-box"><span class="num" id="sumTotal">0</span><span class="lbl">Total Questions</span></div>
+        <div class="summary-box"><span class="num" id="sumMarks">0/0</span><span class="lbl">Marks Obtained</span></div>
+        <div class="summary-box grade"><span class="num" id="sumGrade">A+</span><span class="lbl">Grade</span></div>
+      </div>
+
+      <div class="result-buttons no-print">
+        <button class="btn btn-primary" id="againBtn">🔄 Take Another Test</button>
+        <button class="btn btn-secondary" id="printBtn">🖨️ Download / Print Result</button>
+      </div>
+
+      <h3 class="review-title">📖 Subject-wise Questions &amp; Answers</h3>
+      <div id="reviewBox"></div>
+
+      <p class="result-credit">Developed by Code Brothers</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>📚 Student MCQ Portal — Learn • Practice • Improve</p>
+  <p class="footer-credit">© Developed by Code Brothers</p>
+</footer>
+
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
